@@ -1,6 +1,6 @@
 <?php
 
-class Dashboard extends CI_Model
+class Dashboard_Model extends CI_Model
 {
 
     public function getall()

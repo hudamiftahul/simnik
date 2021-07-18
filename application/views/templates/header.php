@@ -22,6 +22,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <!-- Custom CSS -->
     <link href="<?= base_url('assets'); ?>/css/style.min.css" rel="stylesheet">
 
+    <link href="<?= base_url('assets'); ?>/plugins/bower_components/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" rel="stylesheet" type="text/css" />
+
     <!-- color CSS -->
     <link href="<?= base_url('assets'); ?>/css/colors/megna.css" id="theme" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
