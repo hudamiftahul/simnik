@@ -12,4 +12,30 @@ class User_Model extends CI_Model
             ->get()
             ->result_array();
     }
+
+    public function get_by_id($id)
+    {
+        return $this->db->get('tb_user', ['id_user' => $id])->row_array();
+    }
+
+    public function get_hak()
+    {
+        return $this->db->get('tb_hak')->result_array();
+    }
+
+    public function insert($user)
+    {
+        $this->db->insert('tb_user', $user);
+    }
+
+    public function update($user, $id)
+    {
+        $this->db->update('tb_user', $user, ['id_user' => $id]);
+    }
+
+    public function delete($id)
+    {
+        $this->db->where('id_user', $id);
+        $this->db->delete('tb_user');
+    }
 }
