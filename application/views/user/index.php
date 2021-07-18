@@ -17,12 +17,18 @@
             <div class="col-sm-12">
                 <div class="white-box">
                     <h3 class="box-title m-b-0">Data User</h3>
-                    <a href="" class="btn btn-info mt-3 mb-4">Tambah</a>
+                    <?php if ($this->session->flashdata('message')) : ?>
+                        <div class="alert alert-success" role="alert">
+                            <?= $this->session->flashdata('message'); ?>
+                        </div>
+                    <?php endif; ?>
+                    <a href="<?= base_url(); ?>/user/create" class="btn btn-info mt-3 mb-4">Tambah</a>
                     <div class="table-responsive">
                         <table id="myTable" class="table table-striped">
                             <thead>
                                 <tr>
                                     <th>#</th>
+                                    <th>ID User</th>
                                     <th>Nama</th>
                                     <th>Jenis Kelamin</th>
                                     <th>Telepon</th>
@@ -31,18 +37,21 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $nomer = 1; ?>
                                 <?php foreach ($users as $user) : ?>
                                     <tr>
-                                        <td>1.</td>
+                                        <td><?= $nomer; ?>.</td>
+                                        <td><?= $user['id_user']; ?></td>
                                         <td><?= $user['nm_user']; ?></td>
                                         <td><?= $user['j_kel']; ?></td>
                                         <td><?= $user['phone']; ?></td>
                                         <td><?= $user['nm_hak']; ?></td>
                                         <td>
-                                            <a href="#" class="btn btn-success">Edit</a>
-                                            <a href="#" class="btn btn-danger">Hapus</a>
+                                            <a href="<?= base_url(); ?>user/edit/<?= $user['id_user']; ?>" class="btn btn-success">Edit</a>
+                                            <a href="<?= base_url(); ?>user/delete/<?= $user['id_user']; ?>" class="btn btn-danger" onclick="return confirm('Yakin anda ingin menghapus data ini?')">Hapus</a>
                                         </td>
                                     </tr>
+                                    <?php $nomer++; ?>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
