@@ -47,6 +47,7 @@ class Pendaftaran extends CI_Controller
 
     private function _rules()
     {
+        $this->form_validation->set_rules('id_dftr', 'Id Daftar', 'required');
         $this->form_validation->set_rules('id_pasien', 'Id Pasien', 'required');
         $this->form_validation->set_rules('tgl_daftar', 'Tanggal Daftar', 'required');
         $this->form_validation->set_rules('umur', 'Umur', 'required');

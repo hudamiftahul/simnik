@@ -16,55 +16,135 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="white-box">
-                    <h3 class="box-title mb-3">Tambah Pendaftaran</h3>
                     <form class="form-horizontal" method="POST" action="">
                         <div class="form-group">
-                            <label class="col-md-12">Id User</label>
-                            <div class="col-md-12">
-                                <input type="text" class="form-control" placeholder="Masukkan id user ..." name="id_user">
-                                <i class="text-danger"><?= form_error('id_user'); ?></i>
+                            <div class="col-md-11">
+                                <h3 class="box-title mb-3 float-left">Tambah Pendaftaran</h3>
+                            </div>
+                            <div class="col-md-1">
+                                <input type="text" name="no_antrian" class="form-control float-right text-center" value="001">
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-md-12">Nama</label>
-                            <div class="col-md-12">
-                                <input type="text" class="form-control" placeholder="Masukkan nama ..." name="nama">
-                                <i class="text-danger"><?= form_error('nama'); ?></i>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-md-12">Id Daftar</label>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Masukkan id daftar ..." name="id_dftr">
+                                    <i class="text-danger"><?= form_error('id_dftr'); ?></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Tanggal Daftar</label>
+                                <div class="col-md-12">
+                                    <input type="datetime-local" class="form-control" name="tgl_dftr">
+                                    <i class="text-danger"><?= form_error('nama'); ?></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Poli Tujuan</label>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Masukkan poli tujuan ..." name="poli_tujuan">
+                                    <i class="text-danger"><?= form_error('poli_tujuan'); ?></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">No RM</label>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Masukkan no RM ..." name="no_rm">
+                                    <i class="text-danger"><?= form_error('no_rm'); ?></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Nama Pasien</label>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Masukkan nama pasien ..." name="nm_pasien">
+                                    <i class="text-danger"><?= form_error('nm_pasien'); ?></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Tempat Lahir</label>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Masukkan tempat lahir ..." name="tempat_lahir">
+                                    <i class="text-danger"><?= form_error('tempat_lahir'); ?></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Tanggal Lahir</label>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Masukkan tanggal lahir ..." name="tgl_lhr_pasien">
+                                    <i class="text-danger"><?= form_error('tgl_lhr_pasien'); ?></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Umur</label>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Masukkan umur ..." name="umur">
+                                    <i class="text-danger"><?= form_error('umur'); ?></i>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="col-sm-12">Jenis Kelamin</label>
-                            <div class="col-sm-12">
-                                <select class="form-control" name="jenis_kelamin">
-                                    <option readonly>-- Pilih Jenis Kelamin --</option>
-                                    <option value="Laki-Laki">Laki-Laki</option>
-                                    <option value="Perempuan">Perempuan</option>
-                                </select>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-sm-12">Jenis Pasien</label>
+                                <div class="col-sm-12">
+                                    <select class="form-control" name="jenis_pasien">
+                                        <option readonly>-- Pilih Jenis Pasien --</option>
+                                        <option value="BPJS">BPJS</option>
+                                        <option value="KIS">KIS</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-12">Nomor Telepon</label>
-                            <div class="col-md-12">
-                                <input type="text" class="form-control" placeholder="Masukkan nomor telepon ..." name="phone">
-                                <i class="text-danger"><?= form_error('phone'); ?></i>
+                            <div class="form-group">
+                                <label class="col-md-12">Nama KK</label>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Masukkan nama KK ..." name="kk_pasien">
+                                    <i class="text-danger"><?= form_error('kk_pasien'); ?></i>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-12">Hak Akses</label>
-                            <div class="col-sm-12">
-                                <select class="form-control" name="id_hak">
-                                    <option readonly>-- Pilih Hak Akses --</option>
-                                    <?php foreach ($hak_akses as $ha) : ?>
-                                        <option value="<?= $ha['id_hak']; ?>"><?= $ha['nm_hak']; ?></option>
-                                    <?php endforeach; ?>
-                                </select>
+                            <div class="form-group">
+                                <label class="col-sm-12">Jenis Kelamin</label>
+                                <div class="col-sm-12">
+                                    <select class="form-control" name="jenis_kelamin">
+                                        <option readonly>-- Pilih Jenis Kelamin --</option>
+                                        <option value="Laki-Laki">Laki-Laki</option>
+                                        <option value="Perempuan">Perempuan</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-md-12">Password</label>
-                            <div class="col-md-12">
-                                <input type="password" class="form-control" placeholder="Masukkan password ..." name="password">
-                                <i class="text-danger"><?= form_error('password'); ?></i>
+                            <div class="form-group">
+                                <label class="col-md-12">Alamat</label>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Masukkan alamat ..." name="almt_pasien">
+                                    <i class="text-danger"><?= form_error('almt_pasien'); ?></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Kota</label>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Masukkan kota ..." name="kota_pasien">
+                                    <i class="text-danger"><?= form_error('kota_pasien'); ?></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Kecamatan</label>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Masukkan kecamatan ..." name="kec_pasien">
+                                    <i class="text-danger"><?= form_error('kec_pasien'); ?></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Desa</label>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Masukkan desa ..." name="desa_pasien">
+                                    <i class="text-danger"><?= form_error('desa_pasien'); ?></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-12">Pekerjaan</label>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Masukkan pekerjaan ..." name="pkjr_pasien">
+                                    <i class="text-danger"><?= form_error('pkjr_pasien'); ?></i>
+                                </div>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-info">Submit</button>
