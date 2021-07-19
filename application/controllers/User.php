@@ -22,10 +22,7 @@ class User extends CI_Controller
     public function create()
     {
         $data['hak_akses'] = $this->um->get_hak();
-        $this->form_validation->set_rules('id_user', 'Id User', 'required');
-        $this->form_validation->set_rules('nama', 'Nama', 'required');
-        $this->form_validation->set_rules('password', 'Password', 'required');
-        $this->form_validation->set_rules('phone', 'Telepon', 'required|numeric');
+        $this->_rules();
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('templates/header');
             $this->load->view('templates/navbar');
@@ -83,5 +80,13 @@ class User extends CI_Controller
         $this->um->delete($id);
         $this->session->set_flashdata('message', 'Data berhasil dihapus!');
         redirect('user');
+    }
+
+    private function _rules()
+    {
+        $this->form_validation->set_rules('id_user', 'Id User', 'required');
+        $this->form_validation->set_rules('nama', 'Nama', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+        $this->form_validation->set_rules('phone', 'Telepon', 'required|numeric');
     }
 }
