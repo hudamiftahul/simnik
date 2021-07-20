@@ -68,7 +68,7 @@
                                         <td><?= $dftr['desa_pasien']; ?></td>
                                         <td><?= $dftr['pkjr_pasien']; ?></td>
                                         <td>
-                                            <a href="<?= base_url(); ?>pendaftaran/edit/" class="btn btn-success">Edit</a>
+                                            <a href="<?= base_url(); ?>pendaftaran/edit/<?= $dftr['id_dftr']; ?>" class="btn btn-success">Edit</a>
                                             <a href="<?= base_url(); ?>pendaftaran/delete/" class="btn btn-danger" onclick="return confirm('Yakin anda ingin menghapus data ini?')">Hapus</a>
                                         </td>
                                     </tr>

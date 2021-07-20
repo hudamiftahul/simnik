@@ -22,12 +22,13 @@ class Pendaftaran extends CI_Controller
 
     public function create()
     {
+        $data['no_antrian'] = $this->pm->get_antrian();
         $this->_rules();
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('templates/header');
             $this->load->view('templates/navbar');
             $this->load->view('templates/sidebar');
-            $this->load->view('pendaftaran/create');
+            $this->load->view('pendaftaran/create', $data);
             $this->load->view('templates/footer');
         } else {
             $pendaftaran = array(
@@ -58,6 +59,50 @@ class Pendaftaran extends CI_Controller
             $this->pm->insert_pasien($pasien);
             $this->pm->insert_dftr($pendaftaran);
             $this->session->set_flashdata('message', 'Data berhasil ditambahkan!');
+            redirect('pendaftaran');
+        }
+    }
+
+    public function edit($id)
+    {
+        $data['dftr'] = $this->pm->get_by_id($id);
+        $data['tgl_dftr'] = date('Y-m-d', strtotime($data['dftr']['tgl_dftr'])) . 'T' . date('h:i', strtotime($data['dftr']['tgl_dftr']));
+        $this->_rules();
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('templates/header');
+            $this->load->view('templates/navbar');
+            $this->load->view('templates/sidebar');
+            $this->load->view('pendaftaran/edit', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $pendaftaran = array(
+                'id_dftr' => $this->input->post('id_dftr'),
+                'id_pasien' => $this->input->post('id_pasien'),
+                'no_antrian' => $this->input->post('no_antrian'),
+                'tgl_dftr' => $this->input->post('tgl_dftr'),
+                'umur' => $this->input->post('umur'),
+                'jenis_pasien' => $this->input->post('jenis_pasien'),
+                'poli_tujuan' => $this->input->post('poli_tujuan'),
+            );
+            $pasien = array(
+                'id_pasien' => $this->input->post('id_pasien'),
+                'id_user' => '001',
+                'no_rm' => $this->input->post('no_rm'),
+                'nm_pasien' => $this->input->post('nm_pasien'),
+                'tempat_lahir' => $this->input->post('tempat_lahir'),
+                'tgl_lhr_pasien' => $this->input->post('tgl_lhr_pasien'),
+                'kk_pasien' => $this->input->post('kk_pasien'),
+                'j_kel_pasien' => $this->input->post('jenis_kelamin'),
+                'almt_pasien' => $this->input->post('almt_pasien'),
+                'kota_pasien' => $this->input->post('kota_pasien'),
+                'kec_pasien' => $this->input->post('kec_pasien'),
+                'desa_pasien' => $this->input->post('desa_pasien'),
+                'pkjr_pasien' => $this->input->post('pkjr_pasien'),
+            );
+
+            $this->pm->update_pasien($pasien, $this->input->post('id_pasien'));
+            $this->pm->update_dftr($pendaftaran, $id);
+            $this->session->set_flashdata('message', 'Data berhasil diubah!');
             redirect('pendaftaran');
         }
     }
