@@ -44,6 +44,7 @@ class Pendaftaran_Model extends CI_Model
     public function get_antrian()
     {
         $this->db->select('*');
+        $this->db->where('DAY(tgl_dftr)', date('d'));
         $this->db->where('MONTH(tgl_dftr)', date('m'));
         $this->db->where('YEAR(tgl_dftr)', date('Y'));
         $this->db->order_by('no_antrian', 'DESC');
