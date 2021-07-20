@@ -22,7 +22,7 @@
                                 <h3 class="box-title mb-3 float-left">Tambah Pendaftaran</h3>
                             </div>
                             <div class="col-md-1">
-                                <input type="text" name="no_antrian" class="form-control float-right text-center" value="001">
+                                <input type="text" readonly name="no_antrian" class="form-control float-right text-center bg-info text-white" value="001">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -34,10 +34,16 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label class="col-md-12">Id Pasien</label>
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Masukkan id pasien ..." name="id_pasien">
+                                    <i class="text-danger"><?= form_error('id_pasien'); ?></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
                                 <label class="col-md-12">Tanggal Daftar</label>
                                 <div class="col-md-12">
                                     <input type="datetime-local" class="form-control" name="tgl_dftr">
-                                    <i class="text-danger"><?= form_error('nama'); ?></i>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -71,7 +77,7 @@
                             <div class="form-group">
                                 <label class="col-md-12">Tanggal Lahir</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Masukkan tanggal lahir ..." name="tgl_lhr_pasien">
+                                    <input type="date" class="form-control" placeholder="Masukkan tanggal lahir ..." name="tgl_lhr_pasien">
                                     <i class="text-danger"><?= form_error('tgl_lhr_pasien'); ?></i>
                                 </div>
                             </div>
@@ -146,8 +152,9 @@
                                     <i class="text-danger"><?= form_error('pkjr_pasien'); ?></i>
                                 </div>
                             </div>
+                            <div class="form-group"></div>
                         </div>
-                        <button type="submit" class="btn btn-info">Submit</button>
+                        <button type="submit" class="btn btn-info ml-3">Submit</button>
                         <button type="reset" class="btn btn-secondary">Cancel</button>
                     </form>
                 </div>

@@ -31,15 +31,32 @@ class Pendaftaran extends CI_Controller
             $this->load->view('templates/footer');
         } else {
             $pendaftaran = array(
-                'id_user' => $this->input->post('id_user'),
-                'id_hak' => $this->input->post('id_hak'),
-                'nm_user' => $this->input->post('nama'),
-                'pass_user' => md5($this->input->post('password')),
-                'j_kel' => $this->input->post('jenis_kelamin'),
-                'phone' => $this->input->post('phone')
+                'id_dftr' => $this->input->post('id_dftr'),
+                'id_pasien' => $this->input->post('id_pasien'),
+                'no_antrian' => $this->input->post('no_antrian'),
+                'tgl_dftr' => $this->input->post('tgl_dftr'),
+                'umur' => $this->input->post('umur'),
+                'jenis_pasien' => $this->input->post('jenis_pasien'),
+                'poli_tujuan' => $this->input->post('poli_tujuan'),
+            );
+            $pasien = array(
+                'id_pasien' => $this->input->post('id_pasien'),
+                'id_user' => '001',
+                'no_rm' => $this->input->post('no_rm'),
+                'nm_pasien' => $this->input->post('nm_pasien'),
+                'tempat_lahir' => $this->input->post('tempat_lahir'),
+                'tgl_lhr_pasien' => $this->input->post('tgl_lhr_pasien'),
+                'kk_pasien' => $this->input->post('kk_pasien'),
+                'j_kel_pasien' => $this->input->post('jenis_kelamin'),
+                'almt_pasien' => $this->input->post('almt_pasien'),
+                'kota_pasien' => $this->input->post('kota_pasien'),
+                'kec_pasien' => $this->input->post('kec_pasien'),
+                'desa_pasien' => $this->input->post('desa_pasien'),
+                'pkjr_pasien' => $this->input->post('pkjr_pasien'),
             );
 
-            $this->pm->insert($pendaftaran);
+            $this->pm->insert_pasien($pasien);
+            $this->pm->insert_dftr($pendaftaran);
             $this->session->set_flashdata('message', 'Data berhasil ditambahkan!');
             redirect('pendaftaran');
         }
@@ -49,9 +66,18 @@ class Pendaftaran extends CI_Controller
     {
         $this->form_validation->set_rules('id_dftr', 'Id Daftar', 'required');
         $this->form_validation->set_rules('id_pasien', 'Id Pasien', 'required');
-        $this->form_validation->set_rules('tgl_daftar', 'Tanggal Daftar', 'required');
-        $this->form_validation->set_rules('umur', 'Umur', 'required');
-        $this->form_validation->set_rules('jenis_pasien', 'Jenis Pasien', 'required');
+        $this->form_validation->set_rules('tgl_dftr', 'Tanggal Daftar', 'required');
         $this->form_validation->set_rules('poli_tujuan', 'Poli Tujuan', 'required');
+        $this->form_validation->set_rules('no_rm', 'No RM', 'required');
+        $this->form_validation->set_rules('nm_pasien', 'Nama Pasien', 'required');
+        $this->form_validation->set_rules('tempat_lahir', 'Tempat Lahir', 'required');
+        $this->form_validation->set_rules('tgl_lhr_pasien', 'Tanggal Lahir', 'required');
+        $this->form_validation->set_rules('umur', 'Umur', 'required|numeric');
+        $this->form_validation->set_rules('kk_pasien', 'Nama KK', 'required');
+        $this->form_validation->set_rules('almt_pasien', 'Alamat', 'required');
+        $this->form_validation->set_rules('kota_pasien', 'Kota', 'required');
+        $this->form_validation->set_rules('kec_pasien', 'Kecamatan', 'required');
+        $this->form_validation->set_rules('desa_pasien', 'Desa', 'required');
+        $this->form_validation->set_rules('pkjr_pasien', 'Pekerjaan', 'required');
     }
 }
