@@ -107,6 +107,14 @@ class Pendaftaran extends CI_Controller
         }
     }
 
+    public function delete($id, $id_pasien)
+    {
+        $this->pm->delete_dftr($id);
+        $this->pm->delete_pasien($id_pasien);
+        $this->session->set_flashdata('message', 'Data berhasil dihapus!');
+        redirect('pendaftaran');
+    }
+
     private function _rules()
     {
         $this->form_validation->set_rules('id_dftr', 'Id Daftar', 'required');

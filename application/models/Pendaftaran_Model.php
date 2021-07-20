@@ -2,6 +2,7 @@
 
 class Pendaftaran_Model extends CI_Model
 {
+
     public function get_all()
     {
         $this->db->order_by('id_dftr', 'ASC');
@@ -57,5 +58,15 @@ class Pendaftaran_Model extends CI_Model
             $nomor = 1;
         }
         return sprintf('%03d', $nomor);
+    }
+
+    public function delete_dftr($id)
+    {
+        $this->db->delete('tb_dftr', ['id_dftr' => $id]);
+    }
+
+    public function delete_pasien($id_pasien)
+    {
+        $this->db->delete('tb_pasien', ['id_pasien' => $id_pasien]);
     }
 }
