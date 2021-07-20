@@ -58,7 +58,7 @@
                                         <td><?= $dftr['nm_pasien']; ?></td>
                                         <td><?= $dftr['tempat_lahir']; ?></td>
                                         <td><?= date('d/m/Y', strtotime($dftr['tgl_lhr_pasien'])); ?></td>
-                                        <td><?= $dftr['umur']; ?></td>
+                                        <td><?= $dftr['umur']; ?> Tahun</td>
                                         <td><?= $dftr['jenis_pasien']; ?></td>
                                         <td><?= $dftr['kk_pasien']; ?></td>
                                         <td><?= $dftr['j_kel_pasien']; ?></td>

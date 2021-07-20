@@ -10,4 +10,14 @@ class Pendaftaran_Model extends CI_Model
             ->get()
             ->result_array();
     }
+
+    public function insert_dftr($pendaftaran)
+    {
+        $this->db->insert('tb_dftr', $pendaftaran);
+    }
+
+    public function insert_pasien($pasien)
+    {
+        $this->db->insert('tb_pasien', $pasien);
+    }
 }
