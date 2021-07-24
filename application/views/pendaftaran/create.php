@@ -36,7 +36,7 @@
                             <div class="form-group">
                                 <label class="col-md-12">Id Pasien</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Masukkan id pasien ..." name="id_pasien">
+                                    <input type="text" class="form-control" placeholder="Masukkan id pasien ..." name="id_pasien" id="id_pasien">
                                     <i class="text-danger"><?= form_error('id_pasien'); ?></i>
                                 </div>
                             </div>

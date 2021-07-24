@@ -61,7 +61,7 @@ class Pendaftaran_Model extends CI_Model
         $this->db->order_by('no_antrian', 'DESC');
         $this->db->limit(1);
         $query = $this->db->from('tb_dftr')->get();
-        if ($query->num_rows() >= 1) {
+        if ($query->num_rows() > 0) {
             $data = $query->row_array();
             $nomor = (int)$data['no_antrian'] + 1;
         } else {
