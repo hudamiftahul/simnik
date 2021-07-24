@@ -75,6 +75,44 @@
             'copy', 'csv', 'excel', 'pdf', 'print'
         ]
     });
+
+    function isi_otomatis() {
+        var no_rm = $("#no_rm").val();
+        var url = $("#no_rm").data('url');
+        $.ajax({
+            url: url,
+            data: "no_rm=" + no_rm,
+            success: function(data) {
+                var json = data,
+                    obj = JSON.parse(json);
+                if (obj != null) {
+                    $('#nm_pasien').val(obj.nm_pasien)
+                    $('#tempat_lahir').val(obj.tempat_lahir)
+                    $('#tgl_lhr_pasien').val(obj.tgl_lhr_pasien)
+                    $('#umur').val(obj.umur)
+                    $('#kk_pasien').val(obj.kk_pasien)
+                    $('#jenis_kelamin').val(obj.j_kel_pasien).change()
+                    $('#almt_pasien').val(obj.almt_pasien)
+                    $('#kota_pasien').val(obj.kota_pasien)
+                    $('#kec_pasien').val(obj.kec_pasien)
+                    $('#desa_pasien').val(obj.desa_pasien)
+                    $('#pkjr_pasien').val(obj.pkjr_pasien)
+                } else {
+                    $('#nm_pasien').val("")
+                    $('#tempat_lahir').val("")
+                    $('#tgl_lhr_pasien').val("")
+                    $('#umur').val("")
+                    $('#kk_pasien').val("")
+                    $('#jenis_kelamin').val("").change()
+                    $('#almt_pasien').val("")
+                    $('#kota_pasien').val("")
+                    $('#kec_pasien').val("")
+                    $('#desa_pasien').val("")
+                    $('#pkjr_pasien').val("")
+                }
+            }
+        });
+    }
 </script>
 </body>
 

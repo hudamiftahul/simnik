@@ -56,35 +56,35 @@
                             <div class="form-group">
                                 <label class="col-md-12">No RM</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Masukkan no RM ..." name="no_rm">
+                                    <input type="text" class="form-control" placeholder="Masukkan no RM ..." name="no_rm" id="no_rm" onkeyup="isi_otomatis()" data-url="<?= base_url(); ?>pendaftaran/getRM">
                                     <i class="text-danger"><?= form_error('no_rm'); ?></i>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Nama Pasien</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Masukkan nama pasien ..." name="nm_pasien">
+                                    <input type="text" class="form-control" placeholder="Masukkan nama pasien ..." name="nm_pasien" id="nm_pasien">
                                     <i class="text-danger"><?= form_error('nm_pasien'); ?></i>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Tempat Lahir</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Masukkan tempat lahir ..." name="tempat_lahir">
+                                    <input type="text" class="form-control" placeholder="Masukkan tempat lahir ..." name="tempat_lahir" id="tempat_lahir">
                                     <i class="text-danger"><?= form_error('tempat_lahir'); ?></i>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Tanggal Lahir</label>
                                 <div class="col-md-12">
-                                    <input type="date" class="form-control" placeholder="Masukkan tanggal lahir ..." name="tgl_lhr_pasien">
+                                    <input type="date" class="form-control" placeholder="Masukkan tanggal lahir ..." name="tgl_lhr_pasien" id="tgl_lhr_pasien">
                                     <i class="text-danger"><?= form_error('tgl_lhr_pasien'); ?></i>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Umur</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Masukkan umur ..." name="umur">
+                                    <input type="text" class="form-control" placeholder="Masukkan umur ..." name="umur" id="umur">
                                     <i class="text-danger"><?= form_error('umur'); ?></i>
                                 </div>
                             </div>
@@ -103,15 +103,15 @@
                             <div class="form-group">
                                 <label class="col-md-12">Nama KK</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Masukkan nama KK ..." name="kk_pasien">
+                                    <input type="text" class="form-control" placeholder="Masukkan nama KK ..." name="kk_pasien" id="kk_pasien">
                                     <i class="text-danger"><?= form_error('kk_pasien'); ?></i>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-sm-12">Jenis Kelamin</label>
                                 <div class="col-sm-12">
-                                    <select class="form-control" name="jenis_kelamin">
-                                        <option readonly>-- Pilih Jenis Kelamin --</option>
+                                    <select class="form-control" name="jenis_kelamin" id="jenis_kelamin">
+                                        <option readonly value="">-- Pilih Jenis Kelamin --</option>
                                         <option value="Laki-Laki">Laki-Laki</option>
                                         <option value="Perempuan">Perempuan</option>
                                     </select>
@@ -120,35 +120,35 @@
                             <div class="form-group">
                                 <label class="col-md-12">Alamat</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Masukkan alamat ..." name="almt_pasien">
+                                    <input type="text" class="form-control" placeholder="Masukkan alamat ..." name="almt_pasien" id="almt_pasien">
                                     <i class="text-danger"><?= form_error('almt_pasien'); ?></i>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Kota</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Masukkan kota ..." name="kota_pasien">
+                                    <input type="text" class="form-control" placeholder="Masukkan kota ..." name="kota_pasien" id="kota_pasien">
                                     <i class="text-danger"><?= form_error('kota_pasien'); ?></i>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Kecamatan</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Masukkan kecamatan ..." name="kec_pasien">
+                                    <input type="text" class="form-control" placeholder="Masukkan kecamatan ..." name="kec_pasien" id="kec_pasien">
                                     <i class="text-danger"><?= form_error('kec_pasien'); ?></i>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Desa</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Masukkan desa ..." name="desa_pasien">
+                                    <input type="text" class="form-control" placeholder="Masukkan desa ..." name="desa_pasien" id="desa_pasien">
                                     <i class="text-danger"><?= form_error('desa_pasien'); ?></i>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-12">Pekerjaan</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Masukkan pekerjaan ..." name="pkjr_pasien">
+                                    <input type="text" class="form-control" placeholder="Masukkan pekerjaan ..." name="pkjr_pasien" id="pkjr_pasien">
                                     <i class="text-danger"><?= form_error('pkjr_pasien'); ?></i>
                                 </div>
                             </div>

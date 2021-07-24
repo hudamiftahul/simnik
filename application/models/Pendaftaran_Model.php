@@ -22,6 +22,16 @@ class Pendaftaran_Model extends CI_Model
             ->row_array();
     }
 
+    public function get_by_rm($no_rm)
+    {
+        $this->db->order_by('id_dftr', 'ASC');
+        $this->db->where('no_rm', $no_rm);
+        return $this->db->from('tb_dftr')
+            ->join('tb_pasien', 'tb_pasien.id_pasien=tb_dftr.id_pasien')
+            ->get()
+            ->row_array();
+    }
+
     public function insert_dftr($pendaftaran)
     {
         $this->db->insert('tb_dftr', $pendaftaran);
