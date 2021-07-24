@@ -31,6 +31,7 @@ class Pendaftaran extends CI_Controller
             $this->load->view('pendaftaran/create', $data);
             $this->load->view('templates/footer');
         } else {
+            $pasienLama = $this->pm->get_by_rm($this->input->post('no_rm'));
             $pendaftaran = array(
                 'id_dftr' => $this->input->post('id_dftr'),
                 'id_pasien' => $this->input->post('id_pasien'),
@@ -56,8 +57,13 @@ class Pendaftaran extends CI_Controller
                 'pkjr_pasien' => $this->input->post('pkjr_pasien'),
             );
 
-            $this->pm->insert_pasien($pasien);
-            $this->pm->insert_dftr($pendaftaran);
+            if ($pasienLama == null) {
+                $this->pm->insert_pasien($pasien);
+                $this->pm->insert_dftr($pendaftaran);
+            } else {
+                $this->pm->insert_dftr($pendaftaran);
+            }
+
             $this->session->set_flashdata('message', 'Data berhasil ditambahkan!');
             redirect('pendaftaran');
         }

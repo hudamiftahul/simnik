@@ -86,6 +86,7 @@
                 var json = data,
                     obj = JSON.parse(json);
                 if (obj != null) {
+                    $('#id_pasien').val(obj.id_pasien)
                     $('#nm_pasien').val(obj.nm_pasien)
                     $('#tempat_lahir').val(obj.tempat_lahir)
                     $('#tgl_lhr_pasien').val(obj.tgl_lhr_pasien)
@@ -98,6 +99,7 @@
                     $('#desa_pasien').val(obj.desa_pasien)
                     $('#pkjr_pasien').val(obj.pkjr_pasien)
                 } else {
+                    $('#id_pasien').val("")
                     $('#nm_pasien').val("")
                     $('#tempat_lahir').val("")
                     $('#tgl_lhr_pasien').val("")
