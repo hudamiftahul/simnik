@@ -115,6 +115,13 @@ class Pendaftaran extends CI_Controller
         redirect('pendaftaran');
     }
 
+    public function getRM()
+    {
+        $no_rm = $this->input->get('no_rm');
+        $pend = $this->pm->get_by_rm($no_rm);
+        echo json_encode($pend);
+    }
+
     private function _rules()
     {
         $this->form_validation->set_rules('id_dftr', 'Id Daftar', 'required');
