@@ -16,37 +16,7 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`simnik` /*!40100 DEFAULT CHARACTER SET 
 
 USE `simnik`;
 
-/*Table structure for table `detil_kandungan` */
 
-DROP TABLE IF EXISTS `detil_kandungan`;
-
-CREATE TABLE `detil_kandungan` (
-  `id_detkan` varchar(6) NOT NULL,
-  `id_kandungan` varchar(6) NOT NULL,
-  `id_obt` varchar(6) NOT NULL,
-  PRIMARY KEY (`id_detkan`),
-  KEY `id_kandungan` (`id_kandungan`),
-  KEY `id_obt` (`id_obt`),
-  CONSTRAINT `detil_kandungan_ibfk_1` FOREIGN KEY (`id_kandungan`) REFERENCES `tb_kandungan` (`id_kandungan`),
-  CONSTRAINT `detil_kandungan_ibfk_2` FOREIGN KEY (`id_obt`) REFERENCES `tb_obt` (`id_obt`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-/*Data for the table `detil_kandungan` */
-
-/*Table structure for table `tb_alergi` */
-
-DROP TABLE IF EXISTS `tb_alergi`;
-
-CREATE TABLE `tb_alergi` (
-  `id_alergi` varchar(6) NOT NULL,
-  `id_obt` varchar(6) NOT NULL,
-  `kode_alergi` varchar(10) NOT NULL,
-  PRIMARY KEY (`id_alergi`),
-  KEY `obat` (`id_obt`),
-  CONSTRAINT `obat` FOREIGN KEY (`id_obt`) REFERENCES `tb_obt` (`id_obt`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-/*Data for the table `tb_alergi` */
 
 /*Table structure for table `tb_dftr` */
 
@@ -113,6 +83,38 @@ CREATE TABLE `tb_obt` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `tb_obt` */
+
+/*Table structure for table `detil_kandungan` */
+
+DROP TABLE IF EXISTS `detil_kandungan`;
+
+CREATE TABLE `detil_kandungan` (
+  `id_detkan` varchar(6) NOT NULL,
+  `id_kandungan` varchar(6) NOT NULL,
+  `id_obt` varchar(6) NOT NULL,
+  PRIMARY KEY (`id_detkan`),
+  KEY `id_kandungan` (`id_kandungan`),
+  KEY `id_obt` (`id_obt`),
+  CONSTRAINT `detil_kandungan_ibfk_1` FOREIGN KEY (`id_kandungan`) REFERENCES `tb_kandungan` (`id_kandungan`),
+  CONSTRAINT `detil_kandungan_ibfk_2` FOREIGN KEY (`id_obt`) REFERENCES `tb_obt` (`id_obt`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `detil_kandungan` */
+
+/*Table structure for table `tb_alergi` */
+
+DROP TABLE IF EXISTS `tb_alergi`;
+
+CREATE TABLE `tb_alergi` (
+  `id_alergi` varchar(6) NOT NULL,
+  `id_obt` varchar(6) NOT NULL,
+  `kode_alergi` varchar(10) NOT NULL,
+  PRIMARY KEY (`id_alergi`),
+  KEY `obat` (`id_obt`),
+  CONSTRAINT `obat` FOREIGN KEY (`id_obt`) REFERENCES `tb_obt` (`id_obt`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `tb_alergi` */
 
 /*Table structure for table `tb_pasien` */
 
