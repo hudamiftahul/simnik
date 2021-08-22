@@ -2,11 +2,11 @@
     <div class="container-fluid">
         <div class="row bg-title">
             <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                <h4 class="page-title">Data Obat</h4>
+                <h4 class="page-title">Data Lab</h4>
             </div>
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <ol class="breadcrumb">
-                    <li><a href="#">Obat</a></li>
+                    <li><a href="#">Lab</a></li>
                     <li class="active">Tambah</li>
                 </ol>
             </div>
@@ -19,35 +19,30 @@
                     <form class="form-horizontal" method="POST" action="">
                         <div class="form-group">
                             <div class="col-md-12">
-                                <h3 class="box-title mb-3 float-left">Tambah Obat</h3>
+                                <h3 class="box-title mb-3 float-left">Tambah Lab</h3>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label class="col-md-12">Id Obat</label>
+                                <label class="col-md-12">Id Lab</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Masukkan id obat ..." name="id_obt">
-                                    <i class="text-danger"><?= form_error('id_obt'); ?></i>
+                                    <input type="text" class="form-control" placeholder="Masukkan id lab ..." name="id_lab">
+                                    <i class="text-danger"><?= form_error('id_lab'); ?></i>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-12">Nama Obat</label>
+                                <label class="col-md-12">Nama Lab</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Masukkan nama obat ..." name="nm_obt" id="nm_obt">
-                                    <i class="text-danger"><?= form_error('nm_obt'); ?></i>
+                                    <input type="text" class="form-control" placeholder="Masukkan nama lab ..." name="nm_lab" id="nm_lab">
+                                    <i class="text-danger"><?= form_error('nm_lab'); ?></i>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-12">Harga Obat</label>
+                                <label class="col-md-12">Harga Lab</label>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Masukkan harga obat ..." name="hrg_obt">
-                                    <i class="text-danger"><?= form_error('hrg_obt'); ?></i>
+                                    <input type="text" class="form-control" placeholder="Masukkan harga lab ..." name="trf_lab">
+                                    <i class="text-danger"><?= form_error('trf_lab'); ?></i>
                                 </div>
-                            </div>
-                            <label class="col-md-12">Stok Obat</label>
-                            <div class="col-md-12">
-                                <input type="text" class="form-control" placeholder="Masukkan stok obat ..." name="stok_obt">
-                                <i class="text-danger"><?= form_error('stok_obt'); ?></i>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-info ml-3 mt-3">Submit</button>

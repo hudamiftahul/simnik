@@ -12,8 +12,6 @@ class Obat extends CI_Controller
     public function index()
     {
         $data['obat'] = $this->pm->get_all();
-        // var_dump($data);
-        // die;
         $this->load->view('templates/header');
         $this->load->view('templates/navbar');
         $this->load->view('templates/sidebar');
