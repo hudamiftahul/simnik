@@ -10,7 +10,7 @@ class Lab_Model extends CI_Model
 
     public function get_by_id($id)
     {
-        return $this->db->get_where('tb_lab')->row_array();
+        return $this->db->get_where('tb_lab', ['id_lab' => $id])->row_array();
     }
 
     public function insert($lab)
