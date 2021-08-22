@@ -10,7 +10,7 @@ class Obat_Model extends CI_Model
 
     public function get_by_id($id)
     {
-        return $this->db->get_where('tb_obt')->row_array();
+        return $this->db->get_where('tb_obt', ['id_obt' => $id])->row_array();
     }
 
     public function insert($obat)

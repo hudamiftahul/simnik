@@ -10,7 +10,7 @@ class Tindakan_Model extends CI_Model
 
     public function get_by_id($id)
     {
-        return $this->db->get_where('tb_tindakan')->row_array();
+        return $this->db->get_where('tb_tindakan', ['id_tindakan' => $id])->row_array();
     }
 
     public function insert($penyakit)

@@ -10,7 +10,7 @@ class Penyakit_Model extends CI_Model
 
     public function get_by_id($id)
     {
-        return $this->db->get_where('tb_pnykt')->row_array();
+        return $this->db->get_where('tb_pnykt', ['id_pnykt' => $id])->row_array();
     }
 
     public function insert($penyakit)
