@@ -50,12 +50,12 @@
                                 <i class="text-danger"><?= form_error('stok_obt'); ?></i>
                             </div>
                         </div>
-                <button type="submit" class="btn btn-info ml-3 mt-3">Submit</button>
-                <button type="reset" class="btn btn-secondary mt-3">Cancel</button>
-                </form>
+                        <button type="submit" class="btn btn-info ml-3 mt-3">Submit</button>
+                        <button type="reset" class="btn btn-secondary mt-3">Cancel</button>
+                    </form>
+                </div>
             </div>
         </div>
+        <!-- /.row -->
     </div>
-    <!-- /.row -->
-</div>
 </div>
